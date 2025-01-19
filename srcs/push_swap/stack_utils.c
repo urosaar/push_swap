@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oukhanfa <oukhanfa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/17 23:14:08 by oukhanfa          #+#    #+#             */
+/*   Updated: 2025/01/17 23:43:05 by oukhanfa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/push_swap.h"
 
 int	stack_len(t_stack_node *stack)
 {
 	int	count;
 
-	if (!stack) 
+	if (!stack)
 		return (0);
 	count = 0;
 	while (stack)
@@ -54,7 +66,7 @@ t_stack_node	*find_min(t_stack_node *stack)
 		}
 		stack = stack->next;
 	}
-	return (min_node); 
+	return (min_node);
 }
 
 t_stack_node	*find_max(t_stack_node *stack)

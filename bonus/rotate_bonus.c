@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate_bonus.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oukhanfa <oukhanfa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/17 23:47:48 by oukhanfa          #+#    #+#             */
+/*   Updated: 2025/01/18 00:26:48 by oukhanfa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../bonus/checker_bonus.h"
 
 static void	rotate(t_stack_node **stack)
@@ -6,13 +18,13 @@ static void	rotate(t_stack_node **stack)
 
 	if (!*stack || !(*stack)->next)
 		return ;
-	last_node = find_last(*stack); 
+	last_node = find_last(*stack);
 	last_node->next = *stack;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
 	last_node->next->prev = last_node;
 	last_node->next->next = NULL;
-}		
+}
 
 void	ra(t_stack_node **a, bool print)
 {

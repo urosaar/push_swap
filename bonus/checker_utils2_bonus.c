@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker_utils2_bonus.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oukhanfa <oukhanfa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/17 23:46:13 by oukhanfa          #+#    #+#             */
+/*   Updated: 2025/01/18 00:10:09 by oukhanfa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../bonus/checker_bonus.h"
+
 void	error_free(t_stack_node **a, char **argv, bool flag_argc_2)
 {
 	free_stack(a);
@@ -7,15 +20,16 @@ void	error_free(t_stack_node **a, char **argv, bool flag_argc_2)
 	write(2, "Error\n", 6);
 	exit(1);
 }
+
 int	error_duplicate(t_stack_node *a, int n)
 {
-	if (!a) 
+	if (!a)
 		return (0);
-	while (a) 
+	while (a)
 	{
-		if (a->nbr == n) 
+		if (a->nbr == n)
 			return (1);
-		a = a->next; 
+		a = a->next;
 	}
 	return (0);
 }
@@ -33,7 +47,6 @@ void	append_node(t_stack_node **stack, int n)
 	node->next = NULL;
 	node->nbr = n;
 	node->cheapest = 0;
-
 	if (!(*stack))
 	{
 		*stack = node;
@@ -46,6 +59,7 @@ void	append_node(t_stack_node **stack, int n)
 		node->prev = last_node;
 	}
 }
+
 t_stack_node	*find_last(t_stack_node *stack)
 {
 	if (!stack)
@@ -54,11 +68,12 @@ t_stack_node	*find_last(t_stack_node *stack)
 		stack = stack->next;
 	return (stack);
 }
+
 int	stack_len(t_stack_node *stack)
 {
 	int	count;
 
-	if (!stack) 
+	if (!stack)
 		return (0);
 	count = 0;
 	while (stack)

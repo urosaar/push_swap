@@ -6,7 +6,7 @@
 /*   By: oukhanfa <oukhanfa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 20:46:09 by yogun             #+#    #+#             */
-/*   Updated: 2025/01/15 03:57:44 by oukhanfa         ###   ########.fr       */
+/*   Updated: 2025/01/17 23:49:22 by oukhanfa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ static void	parse_command(t_stack_node **a, t_stack_node **b, char *command)
 	else
 		error(a, b);
 }
+
 int	main(int argc, char **argv)
 {
 	t_stack_node	*a;

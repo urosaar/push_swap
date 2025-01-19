@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_init.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oukhanfa <oukhanfa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/17 23:33:52 by oukhanfa          #+#    #+#             */
+/*   Updated: 2025/01/17 23:40:40 by oukhanfa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/push_swap.h"
 
 static long	ft_atol(const char *s)
@@ -6,7 +18,7 @@ static long	ft_atol(const char *s)
 	int		sign;
 
 	result = 0;
-	sign = 1; 
+	sign = 1;
 	while (*s == ' ' || *s == '\t' || *s == '\n' || \
 			*s == '\r' || *s == '\f' || *s == '\v')
 		s++;
@@ -34,7 +46,6 @@ static void	append_node(t_stack_node **stack, int n)
 	node->next = NULL;
 	node->nbr = n;
 	node->cheapest = 0;
-
 	if (!(*stack))
 	{
 		*stack = node;
@@ -62,7 +73,7 @@ void	init_stack_a(t_stack_node **a, char **argv)
 		if (n > INT_MAX || n < INT_MIN)
 			free_errors(a);
 		if (error_duplicate(*a, (int)n))
-			free_errors(a); 
+			free_errors(a);
 		append_node(a, (int)n);
 		i++;
 	}
@@ -100,6 +111,6 @@ void	prep_for_push(t_stack_node **stack,
 				rb(stack, false);
 			else
 				rrb(stack, false);
-		}	
+		}
 	}
 }

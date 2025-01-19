@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_a_to_b.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oukhanfa <oukhanfa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/17 23:19:00 by oukhanfa          #+#    #+#             */
+/*   Updated: 2025/01/17 23:20:41 by oukhanfa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/push_swap.h"
 
 void	current_index(t_stack_node *stack)
@@ -5,8 +17,8 @@ void	current_index(t_stack_node *stack)
 	int	i;
 	int	median;
 
-	i = 0; 
-	if (!stack) 
+	i = 0;
+	if (!stack)
 		return ;
 	median = stack_len(stack) / 2;
 	while (stack)
@@ -33,7 +45,7 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
 		current_b = b;
 		while (current_b)
 		{
-			if (current_b->nbr < a->nbr 
+			if (current_b->nbr < a->nbr
 				&& current_b->nbr > best_match_index)
 			{
 				best_match_index = current_b->nbr;
