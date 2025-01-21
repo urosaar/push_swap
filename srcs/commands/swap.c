@@ -6,7 +6,7 @@
 /*   By: oukhanfa <oukhanfa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 07:02:06 by oukhanfa          #+#    #+#             */
-/*   Updated: 2025/01/17 07:02:14 by oukhanfa         ###   ########.fr       */
+/*   Updated: 2025/01/21 08:51:20 by oukhanfa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,20 @@
 
 static void	swap(t_stack_node **head)
 {
+	t_stack_node	*first;
+	t_stack_node	*second;
+
 	if (!*head || !(*head)->next)
 		return ;
-	*head = (*head)->next;
-	(*head)->prev->prev = *head;
-	(*head)->prev->next = (*head)->next;
-	if ((*head)->next)
-		(*head)->next->prev = (*head)->prev;
-	(*head)->next = (*head)->prev;
-	(*head)->prev = NULL;
+	first = *head;
+	second = first->next;
+	first->next = second->next;
+	second->prev = first->prev;
+	if (first->next)
+		first->next->prev = first;
+	second->next = first;
+	first->prev = second;
+	*head = second;
 }
 
 void	sa(t_stack_node	**a, bool print)
